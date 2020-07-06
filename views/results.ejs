@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Posters</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #262626;
+            width: 80%;
+            display: inline-block;
+            margin-left: 80px;
+        }
+
+        div {
+            display: inline-block;
+            margin: 20px;
+
+        }
+        h1,p{
+            text-align: left;
+            color: crimson;
+        }
+    </style>
+    <div class="search">
+        <h1>Search For A Movie</h1>
+
+        <form action="/results" method="GET">
+        <input type="text" name="search" placeholder="Search Movie" value="Frozen">
+        <input type="submit">
+        </form>
+
+    </div>
+   
+    <div>
+        <% data.Search.forEach(function(movie){ %>
+        <div>
+            <h3>
+                <h1><%= movie.Title %></h1>
+                <p>Year:<%= movie.Year %></p>
+            </h3>
+            <img src="<%= movie.Poster %>" alt="Movies Poster">
+        </div>
+        <% }) %>
+    </div>
+
+
+</body>
+
+</html>
